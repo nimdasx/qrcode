@@ -2,12 +2,12 @@
 
 **Last Updated: April 28, 2026**
 
-Your privacy is important to us. This Privacy Policy explains how the **QR Code Scanner** application handles your information.
+Your privacy is important to us. This Privacy Policy explains how the **LensaQR** application handles your information.
 
 ## 1. Information Collection and Use
 
 ### Personal Data
-The QR Code Scanner app **does not collect, store, or transmit any personally identifiable information (PII)** to any external servers. All processing is done locally on your device.
+The LensaQR app **does not collect, store, or transmit any personally identifiable information (PII)** to any external servers. All processing is done locally on your device.
 
 ### Camera Access
 To function as a scanner, the app requires permission to access your device's camera. The camera is used solely for scanning QR codes and barcodes. We do not record video or take photos for any purpose other than scanning.

@@ -1,9 +1,9 @@
 import 'package:flutter_test/flutter_test.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:hive_test/hive_test.dart';
-import 'package:qrcode/data/models/scan_result.dart';
-import 'package:qrcode/data/repositories/history_repository.dart';
-import 'package:qrcode/providers/history_provider.dart';
+import 'package:lensaqr/data/models/scan_result.dart';
+import 'package:lensaqr/data/repositories/history_repository.dart';
+import 'package:lensaqr/providers/history_provider.dart';
 
 void main() {
   setUpAll(() async {

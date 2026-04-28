@@ -1,0 +1,8 @@
+title: LensaQR
+description: A modern Flutter application for scanning QR codes and barcodes with persistent history tracking.
+theme: jekyll-theme-minimal
+plugins:
+  - jekyll-feed
+```yaml
+# This is a placeholder for Jekyll configuration
+```

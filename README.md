@@ -1,4 +1,4 @@
-# QR Code Scanner
+# LensaQR
 
 A modern Flutter application for scanning QR codes and barcodes with persistent history tracking.
 
@@ -45,7 +45,33 @@ A modern Flutter application for scanning QR codes and barcodes with persistent 
    ```bash
    flutter pub get
    ```
-4. Run the application:
-   ```bash
-   flutter run
-   ```
+ 4. Run the application:
+    ```bash
+    flutter run
+    ```
+
+## Changing the App Icon
+
+To update the application launcher icon:
+
+1. Replace the image file at `assets/icon.png`.
+2. Run the following command to generate the icons for all platforms:
+    ```bash
+    dart run flutter_launcher_icons
+    ```
+
+## Building for Release
+
+To build the application for release:
+
+### Android APK
+```bash
+flutter build apk --release
+```
+
+### Android App Bundle (for Play Store)
+```bash
+flutter build appbundle --release
+```
+
+

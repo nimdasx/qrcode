@@ -1,0 +1,1 @@
+flutter create --empty --org id.web.sofy .

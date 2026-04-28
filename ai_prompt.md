@@ -1,5 +1,7 @@
 # Prompt for AI: Flutter QR Code Scanner Application
 
+**Note: A Flutter empty project has already been initialized in the current directory.**
+
 I want to build a professional Flutter application that can scan QR codes. Please provide a comprehensive step-by-step guide and the complete code implementation.
 
 ## Project Requirements
@@ -10,10 +12,11 @@ I want to build a professional Flutter application that can scan QR codes. Pleas
 - **Result Handling**: 
     - Display the scanned result in a clean UI (e.g., a bottom sheet or a separate result screen).
     - If the scanned content is a valid URL, provide a button to open it in the system browser using `url_launcher`.
+- **Error Handling**: Implement robust handling for cases where the camera is unavailable, or permissions are permanently denied, with clear user feedback.
 - **History Management**: Implement a way to save scanned results locally. Users should be able to view a list of past scans, re-open URLs, copy the text to clipboard, and share the content using the system share sheet.
 
 ### 2. User Experience & UI
-- **Design**: Follow Material 3 design guidelines for a modern, clean look.
+- **Design**: Follow Material 3 design guidelines for a modern, clean look, including full support for both Light and Dark modes.
 - **Scanning Interface**: 
     - Implement a scanning screen with a clear viewfinder/overlay to guide the user.
     - Add a toggle button to control the camera flashlight.
@@ -24,9 +27,9 @@ I want to build a professional Flutter application that can scan QR codes. Pleas
 - **Code Quality**: 
     - Follow Flutter best practices and clean architecture.
     - Maintain a clear separation between the UI layer and the business logic.
-    - Use a simple state management approach (e.g., `Provider` or `Riverpod`) if necessary.
+    - Use `Riverpod` for state management.
 - **Documentation**: Provide clear comments explaining the logic behind key implementation details.
-- **Local Persistence**: Use a lightweight local storage solution (e.g., `shared_preferences`, `hive`, or `sqflite`) to persist the scan history across app restarts.
+- **Local Persistence**: Use `Hive` for lightweight, fast local persistence to save scan history across app restarts.
 
 ## Expected Deliverables
 
@@ -38,3 +41,4 @@ Please provide the following:
 3. **Project Structure**: A suggested folder organization for the source code.
 4. **Full Source Code**: Complete code for the main entry point, scanning screen, and result handling logic.
 5. **Setup Guide**: Brief instructions on how to run the application.
+6. **Tests**: Basic unit tests for the business logic, especially for the history management.

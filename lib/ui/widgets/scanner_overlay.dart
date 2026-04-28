@@ -7,33 +7,10 @@ class ScannerOverlay extends StatelessWidget {
   Widget build(BuildContext context) {
     return Stack(
       children: [
-        // Darken background
-        ColorFiltered(
-          colorFilter: ColorFilter.mode(
-            Colors.black.withOpacity(0.5),
-            BlendMode.srcOut,
-          ),
-          child: Stack(
-            children: [
-              Container(
-                decoration: const BoxDecoration(
-                  color: Colors.black,
-                  backgroundBlendMode: BlendMode.dstOut,
-                ),
-              ),
-              Align(
-                alignment: Alignment.center,
-                child: Container(
-                  height: 250,
-                  width: 250,
-                  decoration: BoxDecoration(
-                    color: Colors.red,
-                    borderRadius: BorderRadius.circular(24),
-                  ),
-                ),
-              ),
-            ],
-          ),
+        // Darken background with a transparent hole in the middle
+        CustomPaint(
+          size: Size.infinite,
+          painter: _ScannerOverlayPainter(),
         ),
         // Viewfinder frame
         Align(
@@ -60,4 +37,33 @@ class ScannerOverlay extends StatelessWidget {
       ],
     );
   }
+}
+
+class _ScannerOverlayPainter extends CustomPainter {
+  @override
+  void paint(Canvas canvas, Size size) {
+    final paint = Paint()..color = Colors.black.withOpacity(0.5);
+    
+    final rect = Rect.fromLTWH(
+      (size.width - 250) / 2,
+      (size.height - 250) / 2,
+      250,
+      250,
+    );
+    
+    final rrect = RRect.fromRectAndRadius(rect, const Radius.circular(24));
+    
+    // Create a path that covers the whole screen but excludes the center rectangle
+    canvas.drawPath(
+      Path.combine(
+        PathOperation.difference,
+        Path()..addRect(Rect.fromLTWH(0, 0, size.width, size.height)),
+        Path()..addRRect(rrect),
+      ),
+      paint,
+    );
+  }
+
+  @override
+  bool shouldRepaint(covariant CustomPainter oldDelegate) => false;
 }

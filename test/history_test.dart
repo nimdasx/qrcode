@@ -1,7 +1,4 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:hive_test/hive_test.dart';
-import 'package:lensaqr/data/models/scan_result.dart';
 import 'package:lensaqr/data/repositories/history_repository.dart';
 import 'package:lensaqr/providers/history_provider.dart';
 
@@ -35,7 +32,7 @@ void main() {
     test('removing a scan updates state', () async {
       await notifier.addScan('test1');
       await notifier.addScan('test2');
-      
+
       // Remove the first one (index 0 in the current state)
       await notifier.removeScan(0);
       expect(notifier.state.length, 1);
